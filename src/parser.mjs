@@ -1,7 +1,6 @@
 class DokfileParser {
   parse(dokFileContent, targetTag) {
     const parsed = JSON.parse(dokFileContent);
-    console.log(parsed);
 
     const build = {
       baseImage: parsed["image-name"],
