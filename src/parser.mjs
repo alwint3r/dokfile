@@ -9,6 +9,7 @@ class DokfileParser {
       remoteImageName: "",
       remoteTags: [],
       buildArgs: [],
+      dockerFileName: 'Dockerfile',
     };
 
     if (parsed["remote-url"]) {
@@ -23,6 +24,10 @@ class DokfileParser {
       for (const [arg, value] of argsPair) {
         build.buildArgs.push({ arg, value });
       }
+    }
+
+    if (parsed.dockerfile) {
+      build.dockerFileName = parsed.dockerfile;
     }
 
     return build;
